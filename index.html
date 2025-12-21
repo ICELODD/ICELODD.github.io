@@ -1,207 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jo Pectt | Developer Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project's Website</title>
 </head>
 
 <style>
-    * {
+  *{
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
   }
 
-  body {
-    background: #f8f9fa;
-    color: #222;
-    line-height: 1.6;
-    overflow-x: hidden;
+  body{
+    background: #080808;
+    color: #fff;
   }
 
-  /* Navbar */
-  nav {
+  #header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(image/mybackground1.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container{
+    padding: 10px 10%;
+  }
+
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .logo{
+    width: 140px;
+  }
+
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+  }
+
+  nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+  }
+
+  nav ul li a::after{
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #27F573;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+  }
+
+  nav ul li a:hover::after{
+    width: 100%;
+  }
+
+  .header-text{
+    margin-top: 20%;
+    font-size: 30px;
+  }
+
+  .header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+  }
+
+  .header-text h1 span{
+    color: #27F573;
+  }
+
+  /* About */
+  #about{
+    padding: 80px 0;
+    color: #ababab;
+  }
+
+  .row{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 10%;
+    flex-wrap: wrap;
   }
 
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-  .logo span {
-    color: #0077ff;
+  .about-col-1{
+    flex-basis: 35%;
   }
 
-  .nav-links {
-    list-style: none;
+  .about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .about-col-2{
+    flex-basis: 60%;
+  }
+
+  .sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .tab-titles{
     display: flex;
-    gap: 1.5rem;
+    margin: 20px 0 40px;
   }
 
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
+  .tab-links{
+    margin-right: 50px;
+    font-size: 18px;
     font-weight: 500;
-  }
-  .nav-links a:hover {
-    color: #0077ff;
-  }
-
-  /* Hero Section */
-  .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: #fff;
-  }
-
-  .hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-content span {
-    color: #0077ff;
-  }
-
-  .hero-content p {
-    color: #555;
-    margin-bottom: 2rem;
-  }
-
-  .btn {
-    padding: 0.75rem 1.5rem;
-    background: #0077ff;
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-  .btn:hover {
-    background: #005fcc;
-  }
-
-  /* Sections */
-  .section {
-    padding: 5rem 10%;
-    text-align: center;
-  }
-
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .project-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-  }
-  .project-card:hover {
-    transform: translateY(-5px);
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    background: #f1f1f1;
-    font-size: 0.9rem;
-  }
-
-  /* Fade-in Animation */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+    cursor: pointer;
+    position: relative;
   }
 </style>
 
 <body>
-  <header class="hero">
-    <nav>
-      <h1 class="logo">Jo<span>Pectt</span></h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="hero-content">
-      <h2>Hello, I'm <span>Jo Pectt</span></h2>
-      <p>Full Stack Developer Enthusiast</p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
-  </header>
-
-  <section id="about" class="section fade-in">
-    <h2>About Me</h2>
-    <p>
-      I'm a developer passionate about clean design, intuitive interfaces, 
-      and building useful systems with both code and No-Code tools.
-    </p>
-  </section>
-
-  <section id="projects" class="section fade-in">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Online System</h3>
-        <p>Developed using AppSheet.</p>
-      </div>
-      <div class="project-card">
-        <h3>Restaurant PoS App</h3>
-        <p>Custom-built order and sales tracking system using No-Code tools.</p>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="image/mylogo.png" class="logo">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Journey</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>Full-Stack Developer</p>
+        <h1>Hi, I'm <span>Project</span><br>From Thailand</h1>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="contact" class="section fade-in">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:jopctt@example.com">jopctt@example.com</a></p>
-  </section>
+  <!-- About -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="image/myimage2.jpg">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eum debitis blanditiis voluptatum, repellendus voluptate tenetur. Culpa ab tempora atque tenetur tempore, dicta a impedit quam incidunt, quisquam ducimus explicabo.</p>
+          <div class="tab-titles">
+            <p class="tab-links">Education</p>
+            <p class="tab-links">Experience</p>
+            <p class="tab-links">Projects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2025 Jo Pectt — Built with ❤️ and minimal code</p>
-  </footer>
-
-  <script>
-    // Fade-in animation on scroll
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-      threshold: 0.2
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  </script>
 </body>
-
 </html>
+
+<script>
+</script>
