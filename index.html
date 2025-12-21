@@ -1,44 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project's Portfolio Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project's Website</title>
 </head>
 
 <style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
 
+  body{
+    background: #080808;
+    color: #fff;
+  }
+
+  #header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(image/mybackground1.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container{
+    padding: 10px 10%;
+  }
+
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .logo{
+    width: 140px;
+  }
+
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+  }
+
+  nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+  }
+
+  nav ul li a::after{
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #27F573;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+  }
+
+  nav ul li a:hover::after{
+    width: 100%;
+  }
+
+  .header-text{
+    margin-top: 20%;
+    font-size: 30px;
+  }
+
+  .header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+  }
+
+  .header-text h1 span{
+    color: #27F573;
+  }
+
+  /* About */
+  #about{
+    padding: 80px 0;
+    color: #ababab;
+  }
+
+  .row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .about-col-1{
+    flex-basis: 35%;
+  }
+
+  .about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .about-col-2{
+    flex-basis: 60%;
+  }
+
+  .sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+  }
+
+  .tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+  }
 </style>
 
 <body>
-  <header>
-    <p1>TEST HEADER</p1>
-  </header>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="image/mylogo.png" class="logo">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Journey</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>Full-Stack Developer</p>
+        <h1>Hi, I'm <span>Project</span><br>From Thailand</h1>
+      </div>
+    </div>
+  </div>
 
-  <nav>
-    <p1>TEST NAV</p1>
-  </nav>
-
-  <section>
-    <p1>TEST SECTION</p1>
-  </section>
-  
-  <article>
-    <p1>TEST ARTICLE</p1>
-  </article>
-  
-  <aside>
-    <p1>TEST ASIDE</p1>
-  </aside>
-
-  <footer>
-    <p1>TEST FOOTER</p1>
-  </footer>
+  <!-- About -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="image/myimage2.jpg">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eum debitis blanditiis voluptatum, repellendus voluptate tenetur. Culpa ab tempora atque tenetur tempore, dicta a impedit quam incidunt, quisquam ducimus explicabo.</p>
+          <div class="tab-titles">
+            <p class="tab-links">Education</p>
+            <p class="tab-links">Experience</p>
+            <p class="tab-links">Projects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
-
 </html>
 
 <script>
-
 </script>
